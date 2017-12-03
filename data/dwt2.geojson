@@ -1,0 +1,38 @@
+{
+"type": "FeatureCollection",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+                                                                                                                                  
+"features": [
+{ "type": "Feature", "properties": { "No.": "1", "Name": "Addiston and Hedgefield", "Nearest Po": "NE21 4NN" }, "geometry": { "type": "Point", "coordinates": [ -1.740659752814154, 54.971241788010957 ] } },
+{ "type": "Feature", "properties": { "No.": "2", "Name": "Baal Hill", "Nearest Po": "DL13 3HE" }, "geometry": { "type": "Point", "coordinates": [ -1.886580995108683, 54.74141390418373 ] } },
+{ "type": "Feature", "properties": { "No.": "3", "Name": "Barlow Burn", "Nearest Po": "NE21 6JN" }, "geometry": { "type": "Point", "coordinates": [ -1.748576729389259, 54.954184539714426 ] } },
+{ "type": "Feature", "properties": { "No.": "4", "Name": "Bishop Middleham Quarry", "Nearest Po": "DL17 9EE" }, "geometry": { "type": "Point", "coordinates": [ -1.48962588171939, 54.687372360003074 ] } },
+{ "type": "Feature", "properties": { "No.": "5", "Name": "Blackhill Rocks and Cross Gill", "Nearest Po": "TS 27 4DG" }, "geometry": { "type": "Point", "coordinates": [ -1.268387730201551, 54.741058829859035 ] } },
+{ "type": "Feature", "properties": { "No.": "6", "Name": "Burnhope Pond", "Nearest Po": "DH7 0DL" }, "geometry": { "type": "Point", "coordinates": [ -1.71668287227542, 54.82650824975736 ] } },
+{ "type": "Feature", "properties": { "No.": "7", "Name": "Chopwell Meadows", "Nearest Po": "NE16 3EQ" }, "geometry": { "type": "Point", "coordinates": [ -1.677387002138191, 54.679030527470815 ] } },
+{ "type": "Feature", "properties": { "No.": "8", "Name": "Cross Lane Meadows", "Nearest Po": "NE17 7LF" }, "geometry": { "type": "Point", "coordinates": [ -1.825238867739942, 54.919272289562386 ] } },
+{ "type": "Feature", "properties": { "No.": "9", "Name": "Edmondsley Wood", "Nearest Po": "DH7 6FG" }, "geometry": { "type": "Point", "coordinates": [ -1.64187621916462, 54.837094550914792 ] } },
+{ "type": "Feature", "properties": { "No.": "10", "Name": "Hannah's Meadow", "Nearest Po": "DL12 9UX" }, "geometry": { "type": "Point", "coordinates": [ -0.558837118014661, 54.556748409601269 ] } },
+{ "type": "Feature", "properties": { "No.": "11", "Name": "Hawthorn Dene", "Nearest Po": "SR7 8SH" }, "geometry": { "type": "Point", "coordinates": [ -1.341889063522234, 54.806183972682597 ] } },
+{ "type": "Feature", "properties": { "No.": "12", "Name": "Hedlehope Fell", "Nearest Po": "DH7 9ET" }, "geometry": { "type": "Point", "coordinates": [ -1.769940534590095, 54.767309963123701 ] } },
+{ "type": "Feature", "properties": { "No.": "13", "Name": "Hesleden Dene", "Nearest Po": "TS27 4PJ" }, "geometry": { "type": "Point", "coordinates": [ -1.316655479852838, 54.734150903185515 ] } },
+{ "type": "Feature", "properties": { "No.": "14", "Name": "High Wood", "Nearest Po": "NE17 7RR" }, "geometry": { "type": "Point", "coordinates": [ -1.803485160537337, 54.901266501824459 ] } },
+{ "type": "Feature", "properties": { "No.": "15", "Name": "Joe's Pond", "Nearest Po": "DH4 6PU" }, "geometry": { "type": "Point", "coordinates": [ -1.492484682465245, 54.831170441053089 ] } },
+{ "type": "Feature", "properties": { "No.": "16", "Name": "Lamsley Pastures", "Nearest Po": "NE11 0ER" }, "geometry": { "type": "Point", "coordinates": [ -1.610010932101634, 54.912482305113883 ] } },
+{ "type": "Feature", "properties": { "No.": "17", "Name": "Longburnford Quarry", "Nearest Po": "DH8 9HP" }, "geometry": { "type": "Point", "coordinates": [ -1.891091570593761, 54.797134348787864 ] } },
+{ "type": "Feature", "properties": { "No.": "18", "Name": "Low Barns", "Nearest Po": "DL14 0AG" }, "geometry": { "type": "Point", "coordinates": [ -1.754934968357539, 54.678313327246975 ] } },
+{ "type": "Feature", "properties": { "No.": "19", "Name": "Malton", "Nearest Po": "DH7 0TP" }, "geometry": { "type": "Point", "coordinates": [ -1.721475924416449, 54.808546407106569 ] } },
+{ "type": "Feature", "properties": { "No.": "20", "Name": "Milkwellburn Wood", "Nearest Po": "NE17 7TE" }, "geometry": { "type": "Point", "coordinates": [ -1.823729764559902, 54.907587927108956 ] } },
+{ "type": "Feature", "properties": { "No.": "21", "Name": "Rabbitbank Wood", "Nearest Po": "DH8 9EJ" }, "geometry": { "type": "Point", "coordinates": [ -1.828739852199846, 54.829413717929029 ] } },
+{ "type": "Feature", "properties": { "No.": "22", "Name": "Ragpath Heath", "Nearest Po": "DH7 0SX" }, "geometry": { "type": "Point", "coordinates": [ -1.774438452136492, 54.796973855672825 ] } },
+{ "type": "Feature", "properties": { "No.": "23", "Name": "Rainton Meadows", "Nearest Po": "DH4 6PU" }, "geometry": { "type": "Point", "coordinates": [ -1.495597946842772, 54.831183408159085 ] } },
+{ "type": "Feature", "properties": { "No.": "24", "Name": "Raisby Hill Grassland", "Nearest Po": "DH6 4LP" }, "geometry": { "type": "Point", "coordinates": [ -1.478410946272681, 54.715183477036291 ] } },
+{ "type": "Feature", "properties": { "No.": "25", "Name": "Redcar Field", "Nearest Po": "DL1 3LZ" }, "geometry": { "type": "Point", "coordinates": [ -1.549840300188168, 54.572579846703221 ] } },
+{ "type": "Feature", "properties": { "No.": "26", "Name": "Shibdon Pond and Meadows", "Nearest Po": "NE21 5LU" }, "geometry": { "type": "Point", "coordinates": [ -1.701694124720734, 54.959470426440866 ] } },
+{ "type": "Feature", "properties": { "No.": "27", "Name": "Stanley Moss", "Nearest Po": "DL13 4LZ" }, "geometry": { "type": "Point", "coordinates": [ -1.766981615916125, 54.741243342104866 ] } },
+{ "type": "Feature", "properties": { "No.": "28", "Name": "Town Kelloe Bank", "Nearest Po": "DH6 4PJ" }, "geometry": { "type": "Point", "coordinates": [ -1.441010489792987, 54.725800937400649 ] } },
+{ "type": "Feature", "properties": { "No.": "29", "Name": "Trimdon Grange Quarry", "Nearest Po": "TS29 6NP" }, "geometry": { "type": "Point", "coordinates": [ -1.439668530116756, 54.710517328018021 ] } },
+{ "type": "Feature", "properties": { "No.": "30", "Name": "Tudhoe Mill Wood", "Nearest Po": "DL16 6LQ" }, "geometry": { "type": "Point", "coordinates": [ -1.610365735566948, 54.713881750023866 ] } },
+{ "type": "Feature", "properties": { "No.": "31", "Name": "Westfield Pasture", "Nearest Po": "NE40 3UN" }, "geometry": { "type": "Point", "coordinates": [ -1.776548019759289, 54.978501908797199 ] } }
+]
+}

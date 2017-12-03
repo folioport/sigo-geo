@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Theme Made By www.w3schools.com - No Copyright -->
+  <!-- edited by Jonathan Winn -->
+  <title>JonathanWinnCV</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+  <link href="http://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+  <style>
+
+  body {
+      font: 400 15px Lato, sans-serif;
+      line-height: 1.8;
+      color: #818181;
+  }
+  h2 {
+      font-size: 24px;
+      text-transform: uppercase;
+      color: #303030;
+      font-weight: 600;
+      margin-bottom: 30px;
+  }
+  h4 {
+      font-size: 19px;
+      line-height: 1.375em;
+      color: #303030;
+      font-weight: 400;
+      margin-bottom: 30px;
+  }  
+  .jumbotron {
+      background-color: #6CA423;
+      color: #fff;
+      padding: 100px 25px;
+      font-family: Montserrat, sans-serif;
+  }
+  .container-fluid {
+      padding: 60px 50px;
+  }
+  .bg-grey {
+      background-color: #f6f6f6;
+  }
+  .logo-small {
+      color: #6CA423;
+      font-size: 50px;
+  }
+  .logo-med {
+      color: #6CA423;
+      font-size: 100px;
+  }
+  .logo {
+      color: #6CA423;
+      font-size: 200px;
+  }
+  .thumbnail {
+      padding: 0 0 15px 0;
+      border: none;
+      border-radius: 0;
+  }
+  .thumbnail img {
+      width: 100%;
+      height: 100%;
+      margin-bottom: 10px;
+  }
+  .carousel-control.right, .carousel-control.left {
+      background-image: none;
+      color: #6CA423;
+  }
+  .carousel-indicators li {
+      border-color: #6CA423;
+  }
+  .carousel-indicators li.active {
+      background-color: #6CA423;
+  }
+
+
+  .item h4 {
+      font-size: 19px;
+      line-height: 1.375em;
+      font-weight: 400;
+      font-style: italic;
+      margin: 70px 0;
+  }
+  .item span {
+      font-style: normal;
+  }
+  .panel {
+      border: 1px solid #6CA423; 
+      border-radius:0 !important;
+      transition: box-shadow 0.5s;
+  }
+  .panel:hover {
+      box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+  }
+  .panel-footer .btn:hover {
+      border: 1px solid #6CA423;
+      background-color: #fff !important;
+      color: #6CA423;
+  }
+  .panel-heading {
+      color: #fff !important;
+      background-color: #6CA423 !important;
+      padding: 25px;
+      border-bottom: 1px solid transparent;
+      border-top-left-radius: 0px;
+      border-top-right-radius: 0px;
+      border-bottom-left-radius: 0px;
+      border-bottom-right-radius: 0px;
+  }
+
+/*  .panel-footer {
+      background-color: white !important;
+  }
+*/
+  .panel-footer h3 {
+      font-size: 18px;
+  }
+  .panel-footer h4 {
+      color: #aaa;
+      font-size: 14px;
+  }
+  .panel-footer .btn {
+      margin: 15px 0;
+      background-color: #f4511e;
+      color: #fff;
+  }
+  .navbar {
+      margin-bottom: 0;
+      background-color: #6CA423;
+      z-index: 9999;
+      border: 0;
+      font-size: 12px !important;
+      line-height: 1.42857143 !important;
+      letter-spacing: 4px;
+      border-radius: 0;
+      font-family: Montserrat, sans-serif;
+  }
+  .navbar li a, .navbar .navbar-brand {
+      color: #fff !important;
+  }
+  .navbar-nav li a:hover, .navbar-nav li.active a {
+      color: #6CA423 !important;
+      background-color: #fff !important;
+  }
+  .navbar-default .navbar-toggle {
+      border-color: transparent;
+      color: #fff !important;
+  }
+  footer .glyphicon {
+      font-size: 20px;
+      margin-bottom: 20px;
+      color: #6CA423;
+  }
+  .slideanim {visibility:hidden;}
+  .slide {
+      animation-name: slide;
+      -webkit-animation-name: slide;	
+      animation-duration: 1s;	
+      -webkit-animation-duration: 1s;
+      visibility: visible;			
+  }
+  @keyframes slide {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0%);
+    }	
+  }
+  @-webkit-keyframes slide {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0%);
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .col-sm-4 {
+      text-align: center;
+      margin: 25px 0;
+    }
+    .btn-lg {
+        width: 100%;
+        margin-bottom: 35px;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    .logo {
+        font-size: 150px;
+    }
+  }
+
+
+.modal-dialog {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+}
+
+.modal-content {
+  height: 100%;
+  border-radius: 0;
+  colour:white;
+  overflow:auto;  
+
+}
+
+/* The max width is dependant on the container (more info below) */
+.popover{
+    max-width: 100%; /* Max Width of the popover (depending on the container!) */
+}
+
+  </style>
+
+
+<script>
+
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-72105544-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+</head>
+
+<body id="Portfolio1" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#Portfolio1">spatial =</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#analyst">analyst</a></li>
+        <li><a href="#skills">skills</a></li>
+        <li><a href="#education">education</a></li>
+        <li><a href="#portfolio">portfolio</a></li>
+        <li><a href="#tools">tools</a></li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="jumbotron text-center">
+  <h1>Jonathan Winn (spatial)</h1> 
+  <p>  . . . </p> 
+</div>
+
+<!-- Container (analyst Section) -->
+
+<div id="analyst" class="container-fluid bg-grey">
+  <div class="row">
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-globe logo slideanim"></span>
+    </div>
+    <div class="col-sm-8">
+      <h2>GIS, analysis, ecology</h2><br>
+      <h4><strong>CAREER GOAL:</strong> within a large organisation having an applied geospatial or environmental focus.</h4><br>
+      <p><strong>EXPERIENCE:</strong> GIS analyst, landscape ecologist, ecosystem services analyst with experience in conservation and environmental planning.
+       Strong understanding of the ecological processes which underpin environmental management as well as the governance and policy mechanisms that impact these processes.
+      Ability to work with, or act as the link between, expert groups including: ecologists, planners, GIS staff and scientists.</p>  
+      <br> <a href = "https://uk.linkedin.com/in/jonathanwinnspatial" "target="_blank"" style="target-new: tab;" button type = "button" button class="btn btn-success btn-lg" role = "button" >Connect at LinkedIn</a>
+    </div>
+  </div>
+</div>
+
+<!-- Container (skills Section) -->
+
+<div id="skills" class="container-fluid text-center">
+
+  <h2>Spatially aware</h2>
+  <br>
+
+  <div class="row slideanim">
+
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-map-marker logo-med"></span>
+      <h4>GIS</h4>
+      <p>ESRI, QGIS</p>
+      <!img src = "images/esri.png" -->
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-console logo-med"></span>
+      <h4>Code</h4>
+      <p>Python, HTML, CSS</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-cloud logo-med"></span>
+      <h4>Web</h4>
+      <p>WMS, web apps</p>
+    </div>
+  </div>
+
+</div>
+
+<div id="skills" class="container-fluid text-center">
+
+  <h2>Industry experience</h2>
+  <br>
+
+  <div class="row slideanim">
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-leaf logo-med"></span>
+      <h4>Charities</h4>
+      <p>Scottish Wildlife Trust
+      <br>
+      Durham Wildlife Trust
+      <br>
+      UNEP-WCMC      
+     </p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-lock logo-med"></span>
+      <h4>Local government</h4>
+      <p>Peak District 
+      <br>
+       National Park</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-wrench logo-med"></span>
+      <h4>Agencies</h4>
+      <p> SNH
+      <br> 
+       SEPA
+       </p>
+    </div>
+  </div>
+
+</div>
+
+<div id="education" class="container-fluid text-center">
+
+  <h2>Education</h2>
+  <br>
+
+  <div id= education class="row slideanim">
+    <div class="col-sm-4">
+      <a href = "http://etheses.whiterose.ac.uk/3613/" span class="glyphicon glyphicon-book logo-med"></span></a>
+      <h4>PhD</h4>
+      <p>GIS and landscape ecology
+      <br>
+      (University of Sheffield)      
+     </p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-certificate logo-med"></span>
+      <h4>PG Cert</h4>
+      <p>Environmental management
+      <br>
+      (Sheffield Hallam University)
+      </p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-education logo-med"></span>
+      <h4>BSc (Hons)</h4>
+      <p> Ecology
+      <br> 
+      (UEA)    
+      </p>
+    </div>
+  </div>
+
+</div>
+
+
+<!-- Container (Portfolio Section) -->
+
+<div id="portfolio" class="container-fluid text-center bg-grey">
+
+  <h2>Portfolio</h2><br>
+  <h4>Dashboards, maps & apps</h4>
+
+<div class="row text-center slideanim">
+
+     <div class="col-sm-4">
+         
+         <div class="panel panel-default text-center">
+              
+            <div class = "thumbnail">
+               <a href="#" data-toggle="modal" data-target=".dialog1">
+               <img src="images2/ecosmall.jpg" alt="EcoServ-gis" width="400" height="300">
+               <a/>
+               <br>
+               <a href ="#null" 
+               class=" btn-md btn-default btn" role="button" data-toggle="popover"  data-placement="bottom"
+               data-trigger="hover"
+               data-content= "This project dashboard illustrates the study locations, steering group composition, audience impact, delivery timescales and 
+               the ecosystem services mapped during this Wildlife Trust funded project." 
+               > EcoServ-GIS Dashboard</a>
+
+            </div>
+         
+            <div class="modal fade dialog1" tabindex="-1">
+               <div class="modal-dialog modal-lg">
+                   <div class="modal-content">
+                       <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                          <h4 class="modal-title" id="myLargeModalLabel-1">eco-serv-gid</h4>
+                       </div>
+                       <div class="modal-body active">
+                          <img src="images2/ecogif.gif" class="img-responsive img-rounded center-block" alt="" />
+                       </div>
+                       <div class="modal-footer">
+                         <p class="pull-left"> EcoServ-GIS dashboard</p>
+                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                       </div>  
+                   </div>
+               </div>
+            </div>
+
+         </div>
+
+     </div>
+
+
+<div class="col-sm-4">
+
+    <div class="panel panel-default text-center">
+
+        <div class="thumbnail">
+                <a href="#" data-toggle="modal" data-target=".dialog2">
+               <img src="images2/lights.jpg" alt="Edinburgh" width="400" height="300">
+               </a>                 
+               <br>
+               <a href ="#null" 
+               class=" btn-md btn-default btn" role="button" data-toggle="popover"  data-placement="bottom"
+               data-trigger="hover"
+               data-content= "I created this GIS image with Open data,  inspired by the work of Mark Khachfe in an article 
+            from the Guardian. Blending, transparency and least-cost algorithms were used to replicate an image taken from altitude at night." 
+               > Night Lights image</a>
+        
+
+        </div>
+      
+        <div class="modal fade dialog2" tabindex="-1">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                        <h4 class="modal-title" id="myLargeModalLabel-1">Night lights</h4>
+                    </div>
+                    <div class="modal-body active">
+                        <img src="images2/lights.jpg" class="img-responsive img-rounded center-block" alt="" />
+                    </div>
+                    <div class="modal-footer">
+                    <p class="pull-left"> Includes Ordnance Survey data, crown copyright and database rights. Copyright Scottish Natural Heritage (2015).
+                    Mark Khachfe article in the <a href = "http://www.theguardian.com/cities/gallery/2014/apr/16/images-world-cities-from-space-high-quality-photographs-map-data">Guardian.</a>
+                    </p>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close
+                    </button>
+                    </div>  
+                 </div>
+             </div>
+        </div>
+
+        </div>
+
+     </div>
+
+
+<div class="col-sm-4">
+
+      <div class="panel panel-default text-center">
+
+        <div class="thumbnail">
+          <a href="http://www.arcgis.com/apps/SummaryViewer/index.html?appid=155cf01d47ff4a4383dc1eb88a4d9376 "target="_blank"">
+          <img src="images2/peopleX4.jpg" alt="People and climate web app" width="400" height="300">
+          <a/>
+          <br>
+          <a href ="#null" 
+                  class=" btn-md btn-default btn" role="button" data-toggle="popover"  data-placement="bottom"
+                  data-trigger="hover"
+                  data-content= "Web app exploring population and climate. Open data (WorldClim, OS) were used to define climate zones.  
+          Analysis examined the resident population per zone and typical climate values.
+           Use the search bar to explore the climate zones. (Temp:deg C, Rainfall:mm)." 
+                  > People & Climate</a>
+
+
+        </div>
+
+
+ </div> <!-- exit row slideanim -->
+
+ </div> <!-- exit Portfolio section -->
+
+
+
+    <div class="col-sm-12 text-center "> 
+  <br> 
+
+ <a href = "Portfolio2.html"  button type = "button" button class="btn btn-success btn-lg" role = "button" >More map gallery examples
+  </a>
+    </div>
+
+  </div>
+   <br>
+   <br>
+  
+
+  <h2>Recent projects</h2>
+  <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
+  
+  <!-- Indicators -->
+
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <h4>"EcoServ-GIS Developer"<br><span style="font-style:normal;">Ecosystem services mapping<br>Scottish Wildlife Trust, Durham Wildlife Trust</span></h4>
+      </div>
+      <div class="item">
+        <h4>"EcoCo Life +"<br><span style="font-style:normal;">Connectivity analysis mapping<br>Scottish Natural Heritage</span></h4>
+      </div>
+      <div class="item">
+        <h4>"Living Landscapes"<br><span style="font-style:normal;">Conservation planning<br>Durham Wildlife Trust</span></h4>
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+
+
+<!-- Container (tools Section) -->
+
+<div id="tools" class="container-fluid">
+  <div class="text-center">
+    <h2>Tools</h2>
+    <h4>Selected mapping and analysis tools</h4>
+  </div>
+ 
+ <div class="row slideanim">
+
+    <div class="col-sm-6 col-xs-12">
+      <div class="panel panel-default text-center">
+
+        <div class="panel-heading">
+          <!--<h3>EcoServ-GIS</h3> -->
+          <img src = images2/ecologo.png class="img-responsive img-rounded center-block"/>
+        </div>
+        <div class="panel-body">
+          <p><strong>Ecosystem services mapping toolbox. <br> 
+          Supply, demand and multifunctionality. <br> 
+          Created using ModelBuilder. <br>  
+          For ArcGIS 10.2.2 and Spatial analyst. </strong></p>
+        </div>
+        <div class="panel-footer">
+          <a href = "https://drive.google.com/folderview?id=0B_v9QO2jyC4eNlVUbzY1UUstZU0&usp=sharing" 
+           "target="_blank"" style="target-new: tab;" 
+           button type = "button" button class="btn btn-success btn-lg" role = "button" >Download
+          </a>
+        </div>
+      </div>      
+    </div> 
+    
+
+    <div class="col-sm-6 col-xs-12">
+      <div class="panel panel-default text-center">
+
+        <div class="panel-heading">
+          <!-- <h3>MembershipMap</h3> -->
+          <img src = images2/memmap.png class="img-responsive img-rounded center-block"/>
+        </div>
+        <div class="panel-body">
+          <p><strong>Subscriber location analysis. <br> Travel distance to nearest nature reserve. <br> Python toolbox. <br> For ArcGIS 10.2.2 and Spatial analyst.</strong></p>
+        </div>
+        <div class="panel-footer">
+          <a href = "http://jonathan-winn.github.io/MembershipMap/" "target="_blank"" style="target-new: tab;" button type = "button" button class="btn btn-success btn-lg" role = "button" >Download</a>
+        </div>
+      </div>      
+    </div>       
+    
+  </div>
+</div>
+
+<!-- Container (Contact Section) -->
+
+<div id="contact" class="container-fluid bg-grey">
+  <h2 class="text-center">CONTACT</h2>
+
+  <div class="row">
+    <div class="col-sm-5">
+      <p>Contact me via LinkedIn, or send me an email.</p>
+      <p><span class="glyphicon glyphicon-map-marker"></span> Edinburgh, UK</p>
+      <p><span class="glyphicon glyphicon-envelope"></span> ecoserv-gis@outlook.com</p>	   
+    </div>
+
+    <div class="col-sm-7 slideanim">
+      <div class="row">
+        <br>
+        <a href = "https://uk.linkedin.com/in/jonathanwinnspatial"> <img src = "images2/in.png"class="img-responsive img-rounded center-block" alt=""/></a>
+      </div>	
+    </div>
+  </div>
+</div>
+
+<div id="googleMap" style="height:400px;width:100%;"></div>
+
+<!-- Add Google Maps -->
+<script src="http://maps.googleapis.com/maps/api/js"></script>
+<script>
+var myCenter = new google.maps.LatLng (55.975, -3.17);
+
+function initialize() {
+var mapProp = {
+  center:myCenter,
+  zoom:12,
+  scrollwheel:false,
+  draggable:false,
+  mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
+
+var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+var marker = new google.maps.Marker({
+  position:myCenter,
+  });
+
+marker.setMap(map);
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+
+<footer class="container-fluid text-center">
+  <a href="#Portfolio1" title="To Top">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a>
+  <p>Adapted by Jonathan Winn. Based on a <a href= "http://getbootstrap.com" >Bootstrap</a> theme by <a href="http://www.w3schools.com" title="Visit w3schools">www.w3schools.com</a>
+   incorporating <a href = "http://glyphicons.com" >Glyphicons<a/>
+   </p>		
+</footer>
+
+    <script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover(); 
+});
+
+    </script>
+
+
+
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a, footer a[href='#Portfolio1']").on('click', function(event) {
+
+    // Prevent default anchor click behavior
+    event.preventDefault();
+
+    // Store hash
+    var hash = this.hash;
+
+    // Using jQuery's animate() method to add smooth page scroll
+    // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+    $('html, body').animate({
+      scrollTop: $(hash).offset().top
+    }, 900, function(){
+   
+      // Add hash (#) to URL when done scrolling (default click behavior)
+      window.location.hash = hash;
+    });
+  });
+  
+  $(window).scroll(function() {
+    $(".slideanim").each(function(){
+      var pos = $(this).offset().top;
+
+      var winTop = $(window).scrollTop();
+        if (pos < winTop + 600) {
+          $(this).addClass("slide");
+        }
+    });
+  });
+})
+</script>
+
+</body>
+</html>
