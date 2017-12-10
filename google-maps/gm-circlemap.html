@@ -1,7 +1,7 @@
 <!DOCTYPE html>
  <html>
    <head>
-     <title>GoogleMaps HeatMap</title>
+     <title>GoogleMaps CircleMap</title>
      <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
      <meta charset="utf-8">
 
@@ -15,7 +15,7 @@
      <style>
 
  h5 {
-      font-size: 12px !important;
+      font-size: 10px !important;
       text-transform: uppercase;
       color: #303030;
       font-weight: 400;
@@ -25,6 +25,8 @@
       border-radius: 0;
       font-family: Montserrat, sans-serif;
       }
+
+
 
 
 
@@ -256,7 +258,7 @@ body {
    </head>
 
  
-<body id="heatmap" data-spy="scroll" data-target=".navbar" data-offset="60">
+<body id="circlemap" data-spy="scroll" data-target=".navbar" data-offset="60">
 
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container">
@@ -266,7 +268,7 @@ body {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="Portfolio2.html#heatmap">Portfolio</a>
+      <a class="navbar-brand" href="Portfolio2.html#Portfolio2">Portfolio</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
@@ -285,7 +287,7 @@ body {
    </div>
 
    <div class = "text-center" class= "navbar">
-       <h5> Earthquakes, weighted by magnitude (live feed: past 30 days) </h5>
+       <h5> Earthquakes, weighted by magnitude (live feed: past 7 days) </h5>
    </div>
 
 
@@ -298,12 +300,12 @@ body {
 
       function initMap() {
         map = new google.maps.Map(document.getElementById('map_canvas'), {
-          zoom: 3,
-          styles: gmaubstyle,
+          zoom: 4,
+          // styles: gmaubstyle,
           // styles: gmaubaltstyle,
           // styles: gmgreystyle,
-          // styles: gmassasinstyle,
-          center: {lat: 30, lng: 120},
+          styles: gmassasinstyle,
+          center: {lat: -10, lng: 125},
           mapTypeId: 'terrain'
         });
 
@@ -316,7 +318,7 @@ body {
 
         // category 1 + , in last 7 dayas, updated every 5 mins
         // https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/1.0_week.geojsonp
-        // category 2.5 + , in last 7 dayas, updated every 5 mins
+        // category 2.5 + , in last 7 days, updated every 5 mins
         // https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_week.geojsonp
 
         // significant earthquakes in the last 30 days, updated every 15 mins
@@ -324,48 +326,50 @@ body {
         // all recorded earthquakes in the last 30 days, updated every 15 mins
         // https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_month.geojsonp
 
-        script.src = 'https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_month.geojsonp';
+        script.src = 'https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_week.geojsonp';
         document.getElementsByTagName('head')[0].appendChild(script);
 
-      }
 
       // USGS data is passed to the eqfeed_callback function
-      // This adds the coordinates of each earthquake to a heatmapData array
-      // array passed to HeatmapLayer constructor, creates heatmap and displays on map
-      // heatmap layer gives client side rendering of heat maps
-      // To weight results by magnitude, pass WeightedLocation objects to the heatmapData
-      // a weighted location is a data point entry for a heatmap a geographical point with a weight attribute
-      // note contrast between fusion table (server) vs heatmaplayer (client)
 
-      function eqfeed_callback(results) {
-        var heatmapData = [];
-        for (var i = 0; i < results.features.length; i++) {
-          var coords = results.features[i].geometry.coordinates;
-          var latLng = new google.maps.LatLng(coords[1], coords[0]);
-          var magnitude = results.features[i].properties.mag;
-          // populates magnitude variable from "mag" val in json
-          var weightedLoc = {location: latLng, weight: Math.pow(2, magnitude)};
-          // weights each point value by magnitude
-          // heatmapData.push(latLng); // an unweighted heatmap
-          heatmapData.push(weightedLoc); // a weighted heatmap
-        }
 
-        var heatmap = new google.maps.visualization.HeatmapLayer({
-          data: heatmapData,
-          dissipating: false,
-          // heatmaps dissipate on zoom. if false the radius of influence increases with zoom level
-          // ensures color intensity is preserved at any given geographic location. Defaults to false
-          opacity: 0.8,  // 0 to 1 scale
-          radius: 3, // radius of influence for each point, in pixels
-          // gradient:   // custom colour gradient
-          map: map
+      // Adds a style to the Data Layer which calls the getCircle() function.
+      // Creates a custom image for the point instead of the default red marker.
+
+       map.data.setStyle(function(feature) {
+          var magnitude = feature.getProperty('mag');
+          return {
+            icon: getCircle(magnitude)
+          };
         });
       }
+
+      // The magnitude property of the earthquake is passed to this function.
+      // getCircle() draws a circle whose size is defined by the magnitude value, and
+      // sends that circle back to be used as the earthquake's custom marker.
+
+
+      function getCircle(magnitude) {
+        return {
+          path: google.maps.SymbolPath.CIRCLE,
+          //fillColor: 'red',
+          fillColor: 'orange',
+          fillOpacity: .5,
+          scale: Math.pow(2, magnitude) / 2,
+          // strokeColor: 'white',
+          strokeColor: 'yellow',
+          strokeWeight: .6
+        };
+      }
+
+      function eqfeed_callback(results) {
+        map.data.addGeoJson(results);
+      }
+
+
     </script>
 <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBlf6DGBby2Gp3SBNYHof6zJ4N7rk4JJcg&libraries=visualization&callback=initMap">
-        <! -- The visualization library is used to display a heatmap. It contains a HeatmapLayer class. -->
-        <! --When using a library, it must be loaded when the Maps API JavaScript is called. -->
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBlf6DGBby2Gp3SBNYHof6zJ4N7rk4JJcg&callback=initMap">
 </script>
 
 
