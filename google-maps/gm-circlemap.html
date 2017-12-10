@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+ <html>
+   <head>
+     <title>GoogleMaps HeatMap</title>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+     <meta charset="utf-8">
+
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link href="http://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+
+     <style>
+
+ h5 {
+      font-size: 12px !important;
+      text-transform: uppercase;
+      color: #303030;
+      font-weight: 400;
+      margin-bottom: 0px;
+      line-height: 1.42857143 !important;
+      letter-spacing: 3px;
+      border-radius: 0;
+      font-family: Montserrat, sans-serif;
+      }
+
+
+
+
+  h2 {
+      font-size: 24px;
+      text-transform: uppercase;
+      color: #303030;
+      font-weight: 600;
+      margin-bottom: 30px;
+  }
+
+ h4 {
+      font-size: 19px;
+      line-height: 1.375em;
+      color: #303030;
+      font-weight: 400;
+      margin-bottom: 30px;
+  }  
+  .jumbotron {
+      background-color: #6CA423;
+      color: #fff;
+      padding: 100px 25px;
+      font-family: Montserrat, sans-serif;
+  }
+  .container-fluid {
+      padding: 60px 50px;
+  }
+  .bg-grey {
+      background-color: #f6f6f6;
+  }
+  .logo-small {
+      color: #6CA423;
+      font-size: 50px;
+  }
+  .logo-med {
+      color: #6CA423;
+      font-size: 100px;
+  }
+  .logo {
+      color: #6CA423;
+      font-size: 200px;
+  }
+  .thumbnail {
+      padding: 0 0 15px 0;
+      border: none;
+      border-radius: 0;
+  }
+
+ .thumbnail img {
+      width: 100%;
+      height: 100%;
+      margin-bottom: 10px;
+  }
+  .carousel-control.right, .carousel-control.left {
+      background-image: none;
+      color: #6CA423;
+  }
+  .carousel-indicators li {
+      border-color: #6CA423;
+  }
+  .carousel-indicators li.active {
+      background-color: #6CA423;
+  }
+
+
+  .item h4 {
+      font-size: 19px;
+      line-height: 1.375em;
+      font-weight: 400;
+      font-style: italic;
+      margin: 70px 0;
+  }
+  .item span {
+      font-style: normal;
+  }
+
+.panel {
+      border: 1px solid #6CA423; 
+      border-radius:0 !important;
+      transition: box-shadow 0.5s;
+  }
+  .panel:hover {
+      box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+  }
+  .panel-footer .btn:hover {
+      border: 1px solid #6CA423;
+      background-color: #fff !important;
+      color: #6CA423;
+  }
+  .panel-heading {
+      color: #fff !important;
+      background-color: #6CA423 !important;
+      padding: 25px;
+      border-bottom: 1px solid transparent;
+      border-top-left-radius: 0px;
+      border-top-right-radius: 0px;
+      border-bottom-left-radius: 0px;
+      border-bottom-right-radius: 0px;
+  }
+  .panel-footer {
+      background-color: white !important;
+  }
+
+ .panel-footer h3 {
+      font-size: 32px;
+  }
+  .panel-footer h4 {
+      color: #aaa;
+      font-size: 14px;
+  }
+  .panel-footer .btn {
+      margin: 15px 0;
+      background-color: #f4511e;
+      color: #fff;
+  }
+  .navbar {
+      margin-bottom: 0;
+  //    background-color: #6CA423;
+      z-index: 9999;
+      border: 0;
+      font-size: 12px !important;
+      line-height: 1.42857143 !important;
+      letter-spacing: 4px;
+      border-radius: 0;
+      font-family: Montserrat, sans-serif;
+  }
+  .navbar li a, .navbar .navbar-brand {
+  //    color: #fff !important;
+  }
+  .navbar-nav li a:hover, .navbar-nav li.active a {
+   //   color: #6CA423 !important;
+   //   background-color: #fff !important;
+  }
+  .navbar-default .navbar-toggle {
+      border-color: transparent;
+   //   color: #fff !important;
+  }
+  footer .glyphicon {
+      font-size: 20px;
+      margin-bottom: 20px;
+      color: #6CA423;
+  }
+  .slideanim {visibility:hidden;}
+  .slide {
+      animation-name: slide;
+      -webkit-animation-name: slide;	
+      animation-duration: 1s;	
+      -webkit-animation-duration: 1s;
+      visibility: visible;			
+  }
+  @keyframes slide {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0%);
+    }	
+  }
+  @-webkit-keyframes slide {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0%);
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .col-sm-4 {
+      text-align: center;
+      margin: 25px 0;
+    }
+    .btn-lg {
+        width: 100%;
+        margin-bottom: 35px;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    .logo {
+        font-size: 150px;
+    }
+  }
+
+
+.modal-dialog {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+}
+
+.modal-content {
+  height: 100%;
+  border-radius: 0;
+  colour:white;
+  overflow:auto;  
+
+}
+
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 30px;
+}
+
+       html, body, #map_canvas {
+         height: 96%;
+         padding-top: 30px;
+         background-color: #f8f8f8;
+         position: relative;
+       }
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 30px;
+  background-color: #f8f8f8;
+}
+
+
+
+     </style>
+   </head>
+
+ 
+<body id="heatmap" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="Portfolio2.html#heatmap">Portfolio</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="Portfolio2.html#skills">skills</a></li>
+        <li><a href="Portfolio2.html#maps">maps</a></li>
+        <li><a href="Portfolio2.html#api">wms & api</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+   <div id="map_canvas" style = "position: relative;">
+ 
+   </div>
+
+   <div class = "text-center" class= "navbar">
+       <h5> Earthquakes, weighted by magnitude (live feed: past 30 days) </h5>
+   </div>
+
+
+
+<script type='text/javascript' src='../js/gm-styles.js'></script>
+<!-- load google map custom styles -->
+
+<script>
+      var map;
+
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map_canvas'), {
+          zoom: 3,
+          styles: gmaubstyle,
+          // styles: gmaubaltstyle,
+          // styles: gmgreystyle,
+          // styles: gmassasinstyle,
+          center: {lat: 30, lng: 120},
+          mapTypeId: 'terrain'
+        });
+
+        // Create a <script> tag and set the USGS URL as the source.
+        var script = document.createElement('script');
+
+        // https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php
+        // live feed earthquake data are hosted at USGS,
+        // note - need to call the .geosjonp, not the root .geojson
+
+        // category 1 + , in last 7 dayas, updated every 5 mins
+        // https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/1.0_week.geojsonp
+        // category 2.5 + , in last 7 dayas, updated every 5 mins
+        // https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_week.geojsonp
+
+        // significant earthquakes in the last 30 days, updated every 15 mins
+        // https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_month.geojsonp
+        // all recorded earthquakes in the last 30 days, updated every 15 mins
+        // https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_month.geojsonp
+
+        script.src = 'https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_month.geojsonp';
+        document.getElementsByTagName('head')[0].appendChild(script);
+
+      }
+
+      // USGS data is passed to the eqfeed_callback function
+      // This adds the coordinates of each earthquake to a heatmapData array
+      // array passed to HeatmapLayer constructor, creates heatmap and displays on map
+      // heatmap layer gives client side rendering of heat maps
+      // To weight results by magnitude, pass WeightedLocation objects to the heatmapData
+      // a weighted location is a data point entry for a heatmap a geographical point with a weight attribute
+      // note contrast between fusion table (server) vs heatmaplayer (client)
+
+      function eqfeed_callback(results) {
+        var heatmapData = [];
+        for (var i = 0; i < results.features.length; i++) {
+          var coords = results.features[i].geometry.coordinates;
+          var latLng = new google.maps.LatLng(coords[1], coords[0]);
+          var magnitude = results.features[i].properties.mag;
+          // populates magnitude variable from "mag" val in json
+          var weightedLoc = {location: latLng, weight: Math.pow(2, magnitude)};
+          // weights each point value by magnitude
+          // heatmapData.push(latLng); // an unweighted heatmap
+          heatmapData.push(weightedLoc); // a weighted heatmap
+        }
+
+        var heatmap = new google.maps.visualization.HeatmapLayer({
+          data: heatmapData,
+          dissipating: false,
+          // heatmaps dissipate on zoom. if false the radius of influence increases with zoom level
+          // ensures color intensity is preserved at any given geographic location. Defaults to false
+          opacity: 0.8,  // 0 to 1 scale
+          radius: 3, // radius of influence for each point, in pixels
+          // gradient:   // custom colour gradient
+          map: map
+        });
+      }
+    </script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBlf6DGBby2Gp3SBNYHof6zJ4N7rk4JJcg&libraries=visualization&callback=initMap">
+        <! -- The visualization library is used to display a heatmap. It contains a HeatmapLayer class. -->
+        <! --When using a library, it must be loaded when the Maps API JavaScript is called. -->
+</script>
+
+
+
+
+<footer class="navbar navbar-default navbar-fixed-bottom hidden-xs">
+  <div class="container">
+    <div class="navbar-header hidden-xs">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#FNavbar">
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php">USGS</a>
+    </div>
+    <div class="collapse navbar-collapse" id="FNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="https://developers.google.com/maps/"><small>Google maps API</small></a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+
+   </body>
+ </html>

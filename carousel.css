@@ -1,9 +1,6 @@
 /* GLOBAL STYLES
 -------------------------------------------------- */
-
 /* Padding below the footer and lighter body text */
-
-
 
 body 
 {
@@ -11,15 +8,10 @@ body
   color: #5a5a5a;
 }
 
-
-
-
 /* CUSTOMIZE THE NAVBAR
 -------------------------------------------------- */
 
-
 /* Special class on .container surrounding .navbar, used for positioning it into place. */
-
 
 .navbar-wrapper 
 {
@@ -30,36 +22,27 @@ body
   z-index: 20;
 }
 
-
 /* Flip around the padding for proper display in narrow viewports */
-
 
 .navbar-wrapper > .container {
   padding-right: 0;
   padding-left: 0;
 }
 
-
 .navbar-wrapper .navbar {
   padding-right: 15px;
   padding-left: 15px;
 }
-
 
 .navbar-wrapper .navbar .container {
   width: auto;
 }
 
 
-
-
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
 
-
-
 /* Carousel base class */
-
 
 .carousel {
   height: 500px;
@@ -68,20 +51,16 @@ body
 
 /* Since positioning the image, we need to help out the caption */
 
-
 .carousel-caption {
   z-index: 10;
 }
 
-
 /* Declare heights because of positioning of img element */
-
 
 .carousel .item {
   height: 500px;
   background-color: #777;
 }
-
 
 .carousel-inner > .item > img {
   position: absolute;
@@ -92,14 +71,10 @@ body
 }
 
 
-
-
 /* MARKETING CONTENT
 -------------------------------------------------- */
 
-
 /* Center align the text within the three columns below the carousel */
-
 
 .marketing .col-lg-4 {
   margin-bottom: 20px;
@@ -116,15 +91,12 @@ body
 }
 
 
-
-
 /* Featurettes
 ------------------------- */
 
 .featurette-divider {
   margin: 80px 0; /* Space out the Bootstrap <hr> more */
 }
-
 
 
 /* Thin out the marketing headings */
@@ -135,13 +107,8 @@ body
 }
 
 
-
-
-
 /* RESPONSIVE CSS
 -------------------------------------------------- */
-
-
 
 @media (min-width: 768px) 
 {
@@ -161,14 +128,13 @@ body
     padding-left: 0;
   }
 
-  
+
 /* The navbar becomes detached from the top, so we round the corners */
   
 .navbar-wrapper .navbar {
     border-radius: 4px;
   }
 
-  
 
 /* Bump up size of carousel content */
   
@@ -177,7 +143,6 @@ body
     font-size: 21px;
     line-height: 1.4;
   }
-
   
 .featurette-heading {
     font-size: 50px;
