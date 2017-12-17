@@ -6,12 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    
 <!-- Theme adapted from Bootstrap example and template by By www.w3schools.com - No Copyright -->
 
 <meta name="description" content="">
 <meta name="author" content="">
-<title>Portfolio-Jonathan Winn</title>
+<title>Portfolio-Jonathan Winn-GoogleMaps</title>
 
 <!-- Bootstrap core CSS -->
 
@@ -30,7 +29,7 @@
 
 
 <!-- Custom styles for this template -->
-    <link href="carousel.css" rel="stylesheet">
+    <link href="../css/carousel.css" rel="stylesheet">
 
 <!-- load css -->
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -39,7 +38,6 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="http://openspace.ordnancesurvey.co.uk/osmapapi/openspace.js?key=2C30C1B6DE7C0A3AE0530B6CA40A5606"></script>
 
 <style>
 
@@ -52,19 +50,15 @@ margin-top: 40px;}
 
 /* Since positioning the image, we need to help out the caption */
 
-
 .carousel-caption {
   z-index: 10; 
 }
 
-
 /* Declare heights because of positioning of img element */
-
 
 .carousel .item { height: 500px;
     background-color: #777;
 }
-
 
 .carousel-inner > .item > img {
   position: absolute;
@@ -75,15 +69,10 @@ margin-top: 40px;}
 }
 
 
-
-
-
-
 .featurette-image
 {
 margin-top: 120px;
 }
-
 
 .modal-dialog {
   margin: 0;
@@ -201,12 +190,10 @@ margin-top: 120px;
 
 <!-- NAVBAR
 ================================================== -->
-  
 
 <body id="googlemaps" data-spy="scroll" data-target=".navbar" data-offset="60">
 
 <nav class="navbar navbar-default navbar-fixed-top">
-
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -218,72 +205,46 @@ margin-top: 120px;
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="../Portfolio2.html#skills">skills</a></li>
-        <li><a href="../Portfolio2.html#maps">maps</a></li>
-        <li><a href="../Portfolio2.html#api">wms & api</a></li>
+
+          <!-- page navigation links here -->
+
+        <li><a href="../Portfolio2.html#heatmap">heatmap</a></li>
+        <li><a href="../Portfolio2.html#circlemap">circle-icons</a></li>
+        <li><a href="../Portfolio2.html#geology">geology</a></li>
       </ul>
     </div>
   </div>
 </nav>
 
 
-
-
 <!--  featurettes
     ================================================== -->
-
     <!-- Wrap the rest of the page in another container to center all the content. -->
-
     <div class="container marketing">
-
-      <!-- Three columns of text below the carousel -->
-
       <!-- START THE FEATURETTES -->
-
-      <hr class="featurette-divider">
-
-
       <!-- F1 left  -->
+      <div id = "heatmap" class="row featurette">
 
-      <div id = "maps" class="row featurette">
-
-      <h2 class= "featurette-heading text-center"> Google Maps API examples</h2>
-
+      <h2 class= "featurette-heading text-center"> Google Maps API</h2>
           <div class="col-md-7">
-         
               <h2 class="featurette-heading">Earthquake Heat Map. <span class="text-muted">Earthquake magnitude - live feed.</span></h2>
-
               <p class="lead">The USGS live feed of earthquake location and magntiude is used to plot earthquake
-                  locations over the past month. The data is sourced in json format.
-              </p>
-
+                  locations over the past month. The data is sourced in json format. </p>
               <p>
                   <a href ="#null" class="btn btn-md btn-primary hidden-xs" role="button" data-toggle="popover"  data-trigger="hover"
                   data-content= "Census data 2011. Output Area boundaries. Data for Q14: National Identity. 
                   Values per census area were converted to % of respondents for the British and Scottish identity categories. 
                   Areas were mapped where there was a higher % of local residents identifying as Britsh than Scottish." 
-                  > Methods and data</a>
- 
-              </p>
-
+                  > Methods and data</a></p>
            </div>
-        
- 
-           <div class="col-md-5  slideanim">
-  
 
+           <div class="col-md-5  slideanim">
               <a href="#" data-toggle="modal" data-target=".dialog2">       
               <img class="featurette-image img-responsive center-block" img src="../images/gm-circles.JPG" alt="earthquake circles">
-
               </a>
-
            </div>
 
-
-
-
            <div class="modal fade dialog2" tabindex="-1">
-
                 <div class="modal-dialog modal-lg">
                    <div class="modal-content">
                        <div class="modal-header">
@@ -298,62 +259,34 @@ margin-top: 120px;
                        </div>  
                    </div>
                 </div>
-
            </div>
-
-
-      </div>
-
-
- 
-
+      </div> <!-- end of id heatmap div -->
 
 
       <!-- F2 right  -->
-
-
      <hr class="featurette-divider">
 
-
-
-        <div id = "maps" class="row featurette">
-
+        <div id = "circlemap" class="row featurette">
 
            <div class="col-md-7 col-md-push-5 text-right">
-
-
-               <h2 class="featurette-heading">Greenspace in Scottish cities. <span class="text-muted">Comparing population size and green cover.</span></h2>
-
+               <h2 class="featurette-heading">Earthquake heatmapGreenspace. <span class="text-muted">Comparing population size and green cover.</span></h2>
                <p class="lead">Highlighting the greenspaces present within Scottish cities, showing total cover and resident population.
                A three kilometer radius was used to compare between the cities. 
-               I used an infographic inspired design to display the maps and associated data.
-               </p>
-
+               I used an infographic inspired design to display the maps and associated data.</p>
               <p>
                    <a href ="#null" class="btn btn-md btn-primary hidden-xs" role="button" data-toggle="popover"  data-trigger="hover" data-placement="left"
                    data-content= "Mapping based on Habitat Map of Scotland, SNH (2015). All natural habitats were extracted from the map and the total area summed. 
                    A standard reference three kilometer radius around each city centre was used to allow easy comparison between cities. 
                    Whilst the greenspace area used this central area for visual display, the population figue is taken for the whole city boundary area." 
-                   > Methods and data</a>
- 
-              </p>
-
+                   > Methods and data</a></p>
            </div>
-
         <div class="col-md-5 col-md-pull-7 slideanim">
-
-
              <a href="#" data-toggle="modal" data-target=".dialog3"> 
-             <img class="featurette-image img-responsive center-block" img src="images2/city2anigif.gif" alt="scottish cities">
-
+             <img class="featurette-image img-responsive center-block" img src="../images/gm-circles.JPG" alt="scottish cities">
              </a>
-
         </div>
- 
-
 
        <div class="modal fade dialog3" tabindex="-1">
-
                 <div class="modal-dialog modal-lg">
                    <div class="modal-content">
                        <div class="modal-header">
@@ -368,46 +301,19 @@ margin-top: 120px;
                        </div>  
                    </div>
                 </div>
-
          </div>
-     
-      </div>
-
-      
-
-
-
-
-
+      </div>  <!-- end of circlemap div -->
 
 
       <!-- F3 left  -->
-
-
-
       <hr class="featurette-divider">
 
-
-
-
-
-
-      <div id= "maps" class="row featurette">
-
-
+      <div id= "geology" class="row featurette">
          <div class="col-md-7">
-
-
-            <h2 class="featurette-heading">Peat soils conservation. <span class="text-muted">Forestry plantations on carbon rich peat soils.</span></h2>
-
+            <h2 class="featurette-heading">Geology in County Durham. <span class="text-muted">Forestry plantations on carbon rich peat soils.</span></h2>
             <p class="lead">Produced as part of the EcoCo LIFE + project in central Scotland. This map identifies timber plantations on carbon rich deep peat soils, where
-             conservation activites such as tree removal could benefit peatland habitats.
-
-            </p>
-
-           
+             conservation activites such as tree removal could benefit peatland habitats.</p>
             <p>
-          
                   <a href ="#null" 
                   class="btn btn-md btn-primary hidden-xs" role="button" data-toggle="popover"  
                   data-trigger="hover"
@@ -416,30 +322,14 @@ margin-top: 120px;
                   Areas of peatland soils were mapped using Scottish Natural Heritage (2012) Information Notice No 318: 
                   Identification of carbon-rich soil mapping units. Soils classes 5 and 6 were used. Data were downloaded from the Forestry Commission and Soils Scotland websites. 
                   Crown copyright and database rights. Ordnance survey data. Forestry commission data (2015)." 
-                  > Methods and data</a>
- 
-            
-
-            </p>
-  
-
- 
+                  > Methods and data</a></p>
          </div>
-   
-     
          <div class="col-md-5 slideanim">
-          
-
              <a href="#" data-toggle="modal" data-target=".dialog4"> 
-             <img class="featurette-image img-responsive center-block" img src="images2/peatmap.jpg" alt="peat soils">
-
-             </a>            
-
+             <img class="featurette-image img-responsive center-block" img src="../images/geo.jpg" alt="peat soils">
+             </a>
          </div>
-
-
          <div class="modal fade dialog4" tabindex="-1">
-
                 <div class="modal-dialog modal-lg">
                    <div class="modal-content">
                        <div class="modal-header">
@@ -454,56 +344,34 @@ margin-top: 120px;
                        </div>  
                    </div>
                 </div>
-
          </div>
+     </div> <!-- ed of F3 div id -->
 
 
-
-     </div>
-
-
-    <!-- F4 right  -->
+    <!-- F4 right     commented out until next portfolio addition -->
+     <!--
 
      <hr class="featurette-divider">
-
-
-
         <div id = "maps" class="row featurette">
-
-
            <div class="col-md-7 col-md-push-5 text-right">
-
-
                <h2 class="featurette-heading">Topographic data visualisation.<span class="text-muted"><br>Relative position with deviation from elevation mean.</span></h2>
-
                <p class="lead">Multi-scale DTM analysis using WhiteBox GAT 3.2. 
                </p>
-
               <p>
                    <a href ="#null" class="btn btn-md btn-primary hidden-xs" role="button" data-toggle="popover"  data-trigger="hover" data-placement="left"
                    data-content= "Integral image processing in Whitebox GAT 3.2, using relative topographic position with deviation from elevation mean (DEV). 
                    Topographic signature  identified multi-scale zones. Max DEV values were calculated for local (0.1 -0. 5km), meso (0.5 - 5km) and broad (5 - 15km) scales. 
                    A multi-scale topographic colour composite image was then created. Full details in Lindsay et al (2015). "
                    > Methods and data</a>
- 
               </p>
-
            </div>
-
         <div class="col-md-5 col-md-pull-7 slideanim">
-
-
              <a href="#" data-toggle="modal" data-target=".dialogf4"> 
              <img class="featurette-image img-responsive center-block" img src="images2/MapDEV.jpg" alt="TPI maps">
-
              </a>
-
         </div>
- 
-
 
        <div class="modal fade dialogf4" tabindex="-1">
-
                 <div class="modal-dialog modal-lg">
                    <div class="modal-content">
                        <div class="modal-header">
@@ -541,21 +409,15 @@ margin-top: 120px;
                 </div>
 
          </div>
-     
       </div>
-
-      
 
 
      <hr class="featurette-divider">
 
-
-
 </div>
-
-
       <!-- /END THE FEATURETTES -->
 
+  -->
 
 
 </div>
@@ -584,7 +446,6 @@ margin-top: 120px;
   <p>Adapted by Jonathan Winn. Based on a <a href= "http://getbootstrap.com" >Bootstrap</a> theme by <a href="http://www.w3schools.com" title="Visit w3schools">www.w3schools.com</a>
    </p>		
 </footer>
-
 
 
 
@@ -640,18 +501,6 @@ $(document).ready(function(){
 })
 </script>
 
-
-
-
-
-
-
-
-
-
-
-
   </>
-
 
 </html>
