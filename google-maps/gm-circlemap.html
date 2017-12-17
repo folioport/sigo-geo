@@ -2,6 +2,14 @@
  <html>
    <head>
      <title>GoogleMaps CircleMap</title>
+     <! --
+     Web map illustrating:
+
+     Content adapted or inspired from
+       http://bl.ocks.org/zross/9893056
+       https://developers.google.com/maps/documentation/javascript/datalayer
+
+     -->
      <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
      <meta charset="utf-8">
 
@@ -286,6 +294,7 @@ body {
  
    </div>
 
+
    <div class = "text-center" class= "navbar">
        <h5> Earthquakes, weighted by magnitude (live feed: past 7 days) </h5>
    </div>
@@ -297,6 +306,7 @@ body {
 
 <script>
       var map;
+      var infowindow;
 
       function initMap() {
         map = new google.maps.Map(document.getElementById('map_canvas'), {
@@ -316,7 +326,7 @@ body {
         // live feed earthquake data are hosted at USGS,
         // note - need to call the .geosjonp, not the root .geojson
 
-        // category 1 + , in last 7 dayas, updated every 5 mins
+        // category 1 + , in last 7 days, updated every 5 mins
         // https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/1.0_week.geojsonp
         // category 2.5 + , in last 7 days, updated every 5 mins
         // https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_week.geojsonp
@@ -329,42 +339,145 @@ body {
         script.src = 'https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_week.geojsonp';
         document.getElementsByTagName('head')[0].appendChild(script);
 
-
       // USGS data is passed to the eqfeed_callback function
 
 
       // Adds a style to the Data Layer which calls the getCircle() function.
       // Creates a custom image for the point instead of the default red marker.
+      // the style is responsive based on per feature data values
 
        map.data.setStyle(function(feature) {
           var magnitude = feature.getProperty('mag');
           return {
             icon: getCircle(magnitude)
           };
+        }); // end function setStyle
+
+
+        // Define an info window on the map.
+        // by default keep only one active window per map
+        infoWindow = new google.maps.InfoWindow();
+
+
+   //    map.data.setStyle({
+   //    icon: {
+   //       path: google.maps.SymbolPath.CIRCLE,
+   //       fillColor: 'blue',
+   //       fillOpacity: .5,
+   //       scale: 8,
+   //       strokeColor: 'yellow',
+   //       strokeWeight: .6}
+   //     }); // end setStyle
+
+
+    map.data.addListener('mouseover', function(event) {
+    map.data.revertStyle();
+    var magnitude = event.feature.getProperty('mag');
+    // take magnitude var once as only setting new style per feature
+    map.data.overrideStyle(event.feature, {
+      icon: {
+          path: google.maps.SymbolPath.CIRCLE,
+          fillColor: 'red',
+          fillOpacity: .6,
+          scale: Math.pow(2, magnitude) / 2,
+          strokeColor: 'grey',
+          strokeWeight: .2
+        }
+        }
+        );
         });
+        // TODO potential to refactor to move highlighted style to new function or var
+
+    map.data.addListener('mouseout', function(event) {
+    map.data.revertStyle();
+    });
+
+//     map.data.addListener('mouseover', function(event) {
+// event.feature.setProperty('isColorful', true);
+//   window.setTimeout(function() {
+//   event.feature.setProperty('isColorful', true);
+//   }, 1000);
+//   window.setTimeout(function() {
+//   event.feature.setProperty('isColorful', false);
+//   }, 3000);
+// }); // end of addListener
+
+
+  function selectCircle(magnitude) {
+        return {
+          path: google.maps.SymbolPath.CIRCLE,
+          fillColor: 'red',
+          fillOpacity: .3,
+          scale: Math.pow(2, magnitude) / 2,
+          strokeColor: 'white',
+          strokeWeight: .8
+        };
       }
 
-      // The magnitude property of the earthquake is passed to this function.
-      // getCircle() draws a circle whose size is defined by the magnitude value, and
-      // sends that circle back to be used as the earthquake's custom marker.
 
+        // potential to also add per feature info to text box or popup
+        // not used, TODO
+        // map.data.addListener('mouseover', function(event) {
+        // document.getElementById('inset').textContent =
+        // event.feature.getProperty('mag');
+        //});
+
+
+
+        map.data.addListener('click', function(event) {
+        infoWindow.setPosition(event.feature.getGeometry().get());
+        var magTD = event.feature.getProperty('mag');
+        var title = event.feature.getProperty('title');
+        var time = event.feature.getProperty('time');
+        // convert from epoch to time date
+        var eqDate = new Date(time);
+        var locDate = eqDate.toLocaleDateString();
+        infoWindow.setContent("<b> Magnitude: </b>" + magTD + "<br/>" + "<b> Date: </b>" + locDate);
+        infoWindow.open(map);
+        });
+
+        //map.data.addListener('click', function() {
+        //map.setZoom(8)
+        //});
+        // this proves the listener can detect the data layer, not just the whole map canvas
 
       function getCircle(magnitude) {
         return {
           path: google.maps.SymbolPath.CIRCLE,
-          //fillColor: 'red',
           fillColor: 'orange',
           fillOpacity: .5,
           scale: Math.pow(2, magnitude) / 2,
-          // strokeColor: 'white',
           strokeColor: 'yellow',
           strokeWeight: .6
         };
       }
 
+
+      } // end function initMap
+
+
+      // The magnitude property of the earthquake is passed to this function.
+      // getCircle() draws a circle whose size is defined by the magnitude value, and
+      // sends that circle back to be used as the earthquake's custom marker.
+
+ //     function getCircle(magnitude) {
+   //     return {
+     //     path: google.maps.SymbolPath.CIRCLE,
+       //   //fillColor: 'red',
+         // fillColor: color,
+  //        fillOpacity: .5,
+    //      scale: Math.pow(2, magnitude) / 2,
+          // strokeColor: 'white',
+      //    strokeColor: 'yellow',
+        //  strokeWeight: .6
+   //     };
+   //   }
+
       function eqfeed_callback(results) {
         map.data.addGeoJson(results);
       }
+
+
 
 
     </script>
