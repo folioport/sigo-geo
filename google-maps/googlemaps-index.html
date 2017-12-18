@@ -208,9 +208,9 @@ margin-top: 120px;
 
           <!-- page navigation links here -->
 
-        <li><a href="../Portfolio2.html#heatmap">heatmap</a></li>
-        <li><a href="../Portfolio2.html#circlemap">circle-icons</a></li>
-        <li><a href="../Portfolio2.html#geology">geology</a></li>
+        <li><a href="#heatmap">heatmap</a></li>
+        <li><a href="#circlemap">circle-icons</a></li>
+        <li><a href="#geology">geology</a></li>
       </ul>
     </div>
   </div>
@@ -226,16 +226,19 @@ margin-top: 120px;
       <!-- F1 left  -->
       <div id = "heatmap" class="row featurette">
 
-      <h2 class= "featurette-heading text-center"> Google Maps API</h2>
+      <h2 class= "featurette-heading text-center"> Google Maps JavaScript API</h2>
           <div class="col-md-7">
-              <h2 class="featurette-heading">Earthquake Heat Map. <span class="text-muted">Earthquake magnitude - live feed.</span></h2>
-              <p class="lead">The USGS live feed of earthquake location and magntiude is used to plot earthquake
-                  locations over the past month. The data is sourced in json format. </p>
+              <h2 class="featurette-heading">HeatMap. <span class="text-muted">Earthquake magnitude - live feed.</span></h2>
+              <p class="lead">Real-time earthquake data sourced from the USGS.  A data visualisation heatmap indicates the density of points,
+                  via weighted locations, based on earthquake magnitude. The map indicates the clustering of earthquake locations
+                  and their relative local impact, presented against a dark, muted, basemap.</p>
               <p>
                   <a href ="#null" class="btn btn-md btn-primary hidden-xs" role="button" data-toggle="popover"  data-trigger="hover"
-                  data-content= "Census data 2011. Output Area boundaries. Data for Q14: National Identity. 
-                  Values per census area were converted to % of respondents for the British and Scottish identity categories. 
-                  Areas were mapped where there was a higher % of local residents identifying as Britsh than Scottish." 
+                  data-content= "This method allows rendering client-side rather than the server-side rendering of
+                  fusion tables.  Data source is standard GeoJSON via https://earthquake.usgs.gov/earthquakes/feed/  ,
+                  however  the GeoJSONP response is wrapped inside a function call (eqfeed_callback).
+                  The source data includes a variety of attributes including location, magnitude and time.
+                  This example uses the 30 day live feed for all global earthquake events."
                   > Methods and data</a></p>
            </div>
 
@@ -256,15 +259,15 @@ margin-top: 120px;
         <div id = "circlemap" class="row featurette">
 
            <div class="col-md-7 col-md-push-5 text-right">
-               <h2 class="featurette-heading">Earthquake heatmapGreenspace. <span class="text-muted">Comparing population size and green cover.</span></h2>
-               <p class="lead">Highlighting the greenspaces present within Scottish cities, showing total cover and resident population.
-               A three kilometer radius was used to compare between the cities. 
-               I used an infographic inspired design to display the maps and associated data.</p>
-              <p>
+               <h2 class="featurette-heading">CircleMap. <span class="text-muted">Earthquake location and attribute popup.</span></h2>
+               <p class="lead">Varying  sized circle icon symbols represent earthquake magnitude in the last seven
+                   days via USGS real-time earthquake data feed.  Info window popups reveal the earthquake
+                   date and magnitude value for each event.<p>
                    <a href ="#null" class="btn btn-md btn-primary hidden-xs" role="button" data-toggle="popover"  data-trigger="hover" data-placement="left"
-                   data-content= "Mapping based on Habitat Map of Scotland, SNH (2015). All natural habitats were extracted from the map and the total area summed. 
-                   A standard reference three kilometer radius around each city centre was used to allow easy comparison between cities. 
-                   Whilst the greenspace area used this central area for visual display, the population figue is taken for the whole city boundary area." 
+                   data-content= "Data source is standard GeoJSON via https://earthquake.usgs.gov/earthquakes/feed/  ,
+                    however the GeoJSONP response is wrapped inside a function call (eqfeed_callback). The source data
+                    includes a variety of attributes including location, magnitude and time. This example uses the
+                    7 day live feed for all events > 2.5 magnitude."
                    > Methods and data</a></p>
            </div>
         <div class="col-md-5 col-md-pull-7 slideanim">
@@ -281,41 +284,25 @@ margin-top: 120px;
 
       <div id= "geology" class="row featurette">
          <div class="col-md-7">
-            <h2 class="featurette-heading">Geology in County Durham. <span class="text-muted">Forestry plantations on carbon rich peat soils.</span></h2>
-            <p class="lead">Produced as part of the EcoCo LIFE + project in central Scotland. This map identifies timber plantations on carbon rich deep peat soils, where
-             conservation activites such as tree removal could benefit peatland habitats.</p>
+            <h2 class="featurette-heading">Reserves. <span class="text-muted">Location of nature reserves in County
+                Durham.</span></h2>
+            <p class="lead">A fixed extent webmap focussed on County Durham. Two locations are mapped with
+                attribute information and web links within popup boxes.</p>
             <p>
                   <a href ="#null" 
                   class="btn btn-md btn-primary hidden-xs" role="button" data-toggle="popover"  
                   data-trigger="hover"
-                  data-content= "All analysis within ArcGIS 10.2.2. 
-                  Plantations were mapped from Forestry Commission data (National Forest Inventory, Scottish Native Woodland Survey). 
-                  Areas of peatland soils were mapped using Scottish Natural Heritage (2012) Information Notice No 318: 
-                  Identification of carbon-rich soil mapping units. Soils classes 5 and 6 were used. Data were downloaded from the Forestry Commission and Soils Scotland websites. 
-                  Crown copyright and database rights. Ordnance survey data. Forestry commission data (2015)." 
+                  data-content= "A muted basemap is used to enhance focus on the mapped points, whilst
+                  retaining useful travel related information.
+                  Traffic information and cycling routes are enabled via tick boxes."
                   > Methods and data</a></p>
          </div>
          <div class="col-md-5 slideanim">
-             <a href="#" data-toggle="modal" data-target=".dialog4"> 
-             <img class="featurette-image img-responsive center-block" img src="../images/geo.jpg" alt="peat soils">
+             <a href="../google-maps/gm-durham.html">
+             <img class="featurette-image img-responsive center-block" img src="../images/google.jpg" alt="peat soils">
              </a>
          </div>
-         <div class="modal fade dialog4" tabindex="-1">
-                <div class="modal-dialog modal-lg">
-                   <div class="modal-content">
-                       <div class="modal-header">
-                           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
-                       </div>
-                       <div class="modal-body active">
-                           <img src="images2/peatmap.jpg" class="img-responsive img-rounded center-block" alt="" />
-                       </div>
-                       <div class="modal-footer">
-                           <p class="pull-left"> Includes Ordnance Survey, Scottish Natural Heritage, Forestry Commission data. Crown copyright and database rights (2015)</p>
-                           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                       </div>  
-                   </div>
-                </div>
-         </div>
+
      </div> <!-- ed of F3 div id -->
 
 
