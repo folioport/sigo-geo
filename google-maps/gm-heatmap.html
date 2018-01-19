@@ -256,8 +256,43 @@ body {
 }
 
 
+.loader {
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #3498db; /* Blue */
+    border-radius: 50%;
+    position: fixed; // against viewport, not div
+    left: 50%;
+    right: 50%;
+    top: 40%;
+    z-index: 1000;
+    width: 120px;
+    height: 120px;
+    // animation: spin 2s linear infinite;
+    animation: spin 2s linear 4;
+    animation-duration: 2s;
+    opacity: 0.5;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+
 
      </style>
+
+       <script>
+       $(window).load(function() {
+       // Animate loader off screen
+       //$(".loader").fadeOut("slow");;
+       $(".loader").fadeOut(4000);;
+       });
+   </script>
+
+
+
    </head>
 
  
@@ -283,10 +318,10 @@ body {
   </div>
 </nav>
 
-
+<div class="loader"></div>
 
    <div id="map_canvas" style = "position: relative;">
- 
+
    </div>
 
    <div class = "text-center navbar">
