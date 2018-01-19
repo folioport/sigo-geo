@@ -397,6 +397,7 @@
   <h2>Portfolio</h2><br>
   <h4>Dashboards, maps & apps</h4>
 
+    <!-- 1st row of portfolio examples -->
 <div class="row text-center slideanim">
 
      <div class="col-sm-4">
@@ -508,7 +509,7 @@
 </div> <!-- end of div class col-sm-4 -->
 
 
- <!-- project is still within thw main grey portfolio container  -->
+ <!-- project is still within the main grey portfolio container  -->
 
     <div class="col-sm-12 text-center "> 
   <br> 
@@ -523,9 +524,7 @@
    <br>
 
 
-<!-- next row of portfolio examples -->
-
-
+<!-- 2nd row of portfolio examples -->
 
     <div class="row text-center slideanim">
 
@@ -534,37 +533,17 @@
             <div class="panel panel-default text-center">
 
                 <div class = "thumbnail">
-                    <a href="google-maps/gm-heatmap.html">
-
-                        <img src="images/gm-heatmap.jpg" alt="EcoServ-gis" width="400" height="300">
+                        <a href="google-maps/gm-heatmap.html">
+                        <img src="images/gm-heatmap-small.JPG" alt="earthquakes heatmap" width="400" height="300">
                         <a/>
                         <br>
                         <a href ="#null"
                            class=" btn-md btn-default btn" role="button" data-toggle="popover"  data-placement="bottom"
                            data-trigger="hover"
-                           data-content= "This project dashboard illustrates the study locations, steering group composition, audience impact, delivery timescales and
-               the ecosystem services mapped during this Wildlife Trust funded project."
-                        > EcoServ-GIS Dashboard</a>
-
-                </div>
-
-                <div class="modal fade dialog1" tabindex="-1">
-                    <div class="modal-dialog modal-lg">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
-                                <h4 class="modal-title" id="myLargeModalLabel-1">eco-serv-gid</h4>
-                            </div>
-                            <div class="modal-body active">
-                                <a href="/google-maps/gm-heatmap.html" >
-                                img src="images2/ecogif.gif" class="img-responsive img-rounded center-block" alt="" />
-                            </div>
-                            <div class="modal-footer">
-                                <p class="pull-left"> EcoServ-GIS dashboard</p>
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                    </div>
+                           data-content= "Real-time earthquake data (USGS).  A heatmap indicates the density of points,
+                  via weighted locations, based on earthquake magnitude. The map illustrates clustering of earthquake locations
+                  and their relative local impact, presented against a dark, muted, basemap."
+                        > Earthquakes heatmap - live</a>
                 </div>
 
             </div>
@@ -577,33 +556,37 @@
             <div class="panel panel-default text-center">
 
                 <div class="thumbnail">
-                    <a href="#" data-toggle="modal" data-target=".dialog2">
-                        <img src="images/city2anigif.gif" alt="Greenspaces" width="400" height="300">
+                    <a href="#" data-toggle="modal" data-target=".dialog22">
+                        <img src="images/city2anigif.gif" alt="City Greenspaces" width="400" height="300">
                     </a>
                     <br>
                     <a href ="#null"
                        class=" btn-md btn-default btn" role="button" data-toggle="popover"  data-placement="bottom"
                        data-trigger="hover"
-                       data-content= "I created this GIS image with Open data,  inspired by the work of Mark Khachfe in an article
-            from the Guardian. Blending, transparency and least-cost algorithms were used to replicate an image taken from altitude at night."
+                       data-content= "Highlighting the greenspaces present within Scottish cities, showing total cover and resident population.
+               A three kilometer radius was used to compare between the cities.
+               I used an infographic inspired design to display the maps and associated data."
                     > Greenspace in cities</a>
 
 
                 </div>
 
-                <div class="modal fade dialog2" tabindex="-1">
+                <div class="modal fade dialog22" tabindex="-1">
                     <div class="modal-dialog modal-lg">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
-                                <h4 class="modal-title" id="myLargeModalLabel-1">Night lights</h4>
+                                <h4 class="modal-title" id="myLargeModalLabel-1">Greenspace in cities</h4>
                             </div>
                             <div class="modal-body active">
                                 <img src="images/city2anigif.gif" class="img-responsive img-rounded center-block" alt="" />
                             </div>
                             <div class="modal-footer">
-                                <p class="pull-left"> Includes Ordnance Survey data, crown copyright and database rights. Copyright Scottish Natural Heritage (2015).
-                                    Mark Khachfe article in the <a href = "http://www.theguardian.com/cities/gallery/2014/apr/16/images-world-cities-from-space-high-quality-photographs-map-data">Guardian.</a>
+                                <p class="pull-left"> Based on Habitat Map of Scotland, SNH (2015).
+                                    Natural habitats were extracted and the total area summed.
+                                    A three kilometer radius around each city centre was used to allow comparison between cities.
+                                    Whilst the total greenspace area used this central radius for visual display, the population figure is taken for the whole city area.
+                                    Includes Ordnance Survey data, crown copyright and database rights. Copyright Scottish Natural Heritage (2015).
                                 </p>
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Close
                                 </button>
@@ -630,8 +613,7 @@
                        class=" btn-md btn-default btn" role="button" data-toggle="popover"  data-placement="bottom"
                        data-trigger="hover"
                        data-content= "ESRI story map detailing an ecosystem services mapping project in the central belt of Scotland.
-                       text
-                       text "
+                       EcoServ-GIS was used to map the benefits of nature in Cumbernauld."
                     > Ecosystem services map</a>
 
                 </div>
@@ -663,28 +645,62 @@
 
     <div class="carousel-inner" role="listbox">
       <div class="item active">
-        <h4>"EcoServ-GIS Developer"<br>
-            <span style="font-style:normal;">Ecosystem services mapping
-                <br>Scottish Wildlife Trust, Durham Wildlife Trust
-                <br> (2015)
-            </span></h4>
-      </div>
-      <div class="item">
-        <h4>"EcoCo Life +"
-            <br><span style="font-style:normal;">Connectivity analysis mapping
-                <br>Scottish Natural Heritage
-                <br> (2013)
-            </span></h4>
-      </div>
-      <div class="item">
-        <h4>"Living Landscapes"
-            <br><span style="font-style:normal;">Conservation planning
+              <h4>"Living Landscapes"
+                  <br><span style="font-style:normal;">Conservation planning
                 <br>Durham Wildlife Trust
                 <br> (2012)
             </span></h4>
+          </div>
+
+        <div class="item">
+        <h4>"EcoServ-GIS "<br>
+            <span style="font-style:normal;">
+                <a href="https://scottishwildlifetrust.org.uk/our-work/our-evidence-base/mapping-ecosystem-services/">
+                Ecosystem services mapping </a>, GIS, project management
+                <br>  Scottish Wildlife Trust, Durham Wildlife Trust
+                <br> (2014)
+            </span></h4>
       </div>
+
+        <div class="item">
+        <h4>"EcoCo Life +"
+            <br><span style="font-style:normal;">
+                 <a href="https://scottishwildlifetrust.org.uk/our-work/our-evidence-base/mapping-ecosystem-services/">
+                Connectivity and Ecosystem services mapping, GIS </a>
+                <br>Scottish Natural Heritage
+                <br> (2015)
+            </span></h4>
+      </div>
+
+        <div class="item">
+        <h4>"Big Data Dissemination"
+            <br><span style="font-style:normal;">
+                Python, Java, Agile
+                <br>Met Office
+                <br> (2016)
+            </span></h4>
+      </div>
+        <div class="item">
+            <h4>"Chemet"
+                <br><span style="font-style:normal;">
+                    Agile, AWS, GeoServer, VisualWeather
+                <br>Met Office
+                <br> (2017)
+            </span></h4>
+        </div>
+        <div class="item">
+            <h4>"PollerGEN"
+                <br><span style="font-style:normal;">
+                    Grass species mapping, GIS, Jupyter notebooks
+                <br>Met Office
+                <br> (2018)
+            </span></h4>
+        </div>
+
+
         <br>
-    </div>
+
+    </div> <!-- end carousel inner -->
 
     <!-- Left and right controls -->
 
