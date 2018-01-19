@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+     <title>OS Openspace API</title>
+<meta charset="utf-8">
+
+
+ <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link href="http://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+  
+<!-- development key
+<script type="text/javascript" src="http://openspace.ordnancesurvey.co.uk/osmapapi/openspace.js?key=BA08531D8339984EE0405F0AC86026A9"></script>  
+-->
+
+<script type="text/javascript" src="http://openspace.ordnancesurvey.co.uk/osmapapi/openspace.js?key=2C30C1B6DE7C0A3AE0530B6CA40A5606"></script>  
+
+
+<style>
+
+
+
+  h2 {
+      font-size: 24px;
+      text-transform: uppercase;
+      color: #303030;
+      font-weight: 600;
+      margin-bottom: 30px;
+  }
+
+ h4 {
+      font-size: 19px;
+      line-height: 1.375em;
+      color: #303030;
+      font-weight: 400;
+      margin-bottom: 30px;
+  }  
+
+  .container-fluid {
+      padding: 60px 50px;
+  }
+  .bg-grey {
+      background-color: #f6f6f6;
+  }
+  .logo-small {
+      color: #6CA423;
+      font-size: 50px;
+  }
+  .logo-med {
+      color: #6CA423;
+      font-size: 100px;
+  }
+  .logo {
+      color: #6CA423;
+      font-size: 200px;
+  }
+  .thumbnail {
+      padding: 0 0 15px 0;
+      border: none;
+      border-radius: 0;
+  }
+
+ .thumbnail img {
+      width: 100%;
+      height: 100%;
+      margin-bottom: 10px;
+  }
+ 
+
+  .item h4 {
+      font-size: 19px;
+      line-height: 1.375em;
+      font-weight: 400;
+      font-style: italic;
+      margin: 70px 0;
+  }
+  .item span {
+      font-style: normal;
+  }
+
+.panel {
+      border: 1px solid #6CA423; 
+      border-radius:0 !important;
+      transition: box-shadow 0.5s;
+  }
+  .panel:hover {
+      box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+  }
+  .panel-footer .btn:hover {
+      border: 1px solid #6CA423;
+      background-color: #fff !important;
+      color: #6CA423;
+  }
+  .panel-heading {
+      color: #fff !important;
+      background-color: #6CA423 !important;
+      padding: 25px;
+      border-bottom: 1px solid transparent;
+      border-top-left-radius: 0px;
+      border-top-right-radius: 0px;
+      border-bottom-left-radius: 0px;
+      border-bottom-right-radius: 0px;
+  }
+  .panel-footer {
+      background-color: white !important;
+  }
+
+ .panel-footer h3 {
+      font-size: 32px;
+  }
+  .panel-footer h4 {
+      color: #aaa;
+      font-size: 14px;
+  }
+  .panel-footer .btn {
+      margin: 15px 0;
+      background-color: #f4511e;
+      color: #fff;
+  }
+  .navbar {
+      margin-bottom: 0;
+   //   background-color: #6CA423;
+      z-index: 9999;
+      border: 0;
+      font-size: 12px !important;
+      line-height: 1.42857143 !important;
+      letter-spacing: 4px;
+      border-radius: 0;
+      font-family: Montserrat, sans-serif;
+  }
+  .navbar li a, .navbar .navbar-brand {
+   //   color: #fff !important;
+  }
+  .navbar-nav li a:hover, .navbar-nav li.active a {
+   //   color: #6CA423 !important;
+   //   background-color: #fff !important;
+  }
+  .navbar-default .navbar-toggle {
+      border-color: transparent;
+  //    color: #fff !important;
+  }
+  footer .glyphicon {
+      font-size: 20px;
+      margin-bottom: 20px;
+      color: #6CA423;
+  }
+  .slideanim {visibility:hidden;}
+  .slide {
+      animation-name: slide;
+      -webkit-animation-name: slide;	
+      animation-duration: 1s;	
+      -webkit-animation-duration: 1s;
+      visibility: visible;			
+  }
+  @keyframes slide {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0%);
+    }	
+  }
+  @-webkit-keyframes slide {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0%);
+    }
+  }
+
+
+html {
+  min-height: 100%;
+}
+
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 30px;
+}
+
+       html, body, #map {
+         height: 95%;
+         widht: 100%;
+         padding-top: 30px;
+         background-color: #f8f8f8;
+         position: relative;
+         Z-index: -1;
+       }
+
+.mapcaption {
+  position: absolute;
+ // overflow: auto;
+ margin: auto;
+  top: 85%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 310px;
+  height: 40px;
+  Z-index: 20000;
+// background-color: #f8f8f8;
+background-color: #b3b3b3;
+  padding: 20px;
+  padding-top: 10px;
+  border-radius: 30px;
+}
+
+
+
+
+  @media screen and (max-width: 768px) {
+    .col-sm-4 {
+      text-align: center;
+      margin: 25px 0;
+    }
+    .btn-lg {
+        width: 100%;
+        margin-bottom: 35px;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    .logo {
+        font-size: 150px;
+    }
+  }
+
+
+.modal-dialog {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+}
+
+.modal-content {
+  height: 100%;
+  border-radius: 0;
+  colour:white;
+  overflow:auto;  
+
+}
+
+.maptext {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin: 0;
+    background-color: #f8f8f8;
+    text-align: center;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 30px;
+  background-color: #f8f8f8;
+}
+
+
+</style>
+
+</head>  
+
+<body onload="init()" id="myPage" >
+ 
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="Portfolio2.html#myPage">Portfolio</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="Portfolio2.html#skills">skills</a></li>
+        <li><a href="Portfolio2.html#maps">maps</a></li>
+        <li><a href="Portfolio2.html#api">wms & api</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid" id="map" >
+<div class = "caption mapcaption hidden-xs" style = "position: absolute;">
+<p><strong> Click points to visit reserve website</strong></p>
+</div>
+</div>
+
+
+<footer class="navbar navbar-default navbar-fixed-bottom hidden-xs">
+  <div class="container">
+    <div class="navbar-header hidden-xs">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#FNavbar">
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="http://www.durhamwt.com/">Durham Wildlife Trust</a>
+    </div>
+    <div class="collapse navbar-collapse" id="FNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="https://www.ordnancesurvey.co.uk/business-and-government/products/os-openspace/api/index.html"><small>OS Openspace API</small></a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+
+
+<script>
+
+// Define the osMap variable
+
+var osMap, boundaryLayer, lookup;
+
+ var width = window.innerWidth;
+
+if(width > 400){
+var extentx = new OpenLayers.Bounds (400000, 500000, 441000, 575000); 
+}  else {
+var extentx = new OpenLayers.Bounds (435000, 434000, 499000, 530000);
+}
+
+
+
+// This function creates the map and is called by the div in the HTML
+
+function init()
+
+  {
+    
+// Create new map
+
+  var options = {
+                restrictedExtent: extentx
+            };   
+
+    osMap = new OpenSpace.Map('map', options);
+    
+
+
+
+
+if(width > 400){
+
+   osMap.setCenter(new OpenSpace.MapPoint(423500, 539500), 4);
+
+}  else {
+
+   osMap.setCenter(new OpenSpace.MapPoint(450000, 505000), 3);
+
+}
+  
+
+
+// Create a variable to hold a map position
+    
+    var pos = new OpenSpace.MapPoint(432500,548600);
+
+    var content = '<b>Rainton Meadows</b><br>'+ 
+                   'Durham Wildlife Trust Headquarters, visitor centre and coffee shop.'+
+                   'Visit the webpage: <a href="http://www.durhamwt.com/reserves/dwt-reserves-list/rainton-meadows/">'+
+      'Rainton Meadows</a>'
+;
+
+
+    osMap.createMarker(pos, null, content);
+    
+
+
+// Create a variable to hold a map position
+    
+    var pos2 = new OpenSpace.MapPoint(415900,531500);
+
+    var content2 = '<b>Low Barns</b><br>'+ 
+                   'Key wetland reserve, in the west of County Durham.'+
+                   'Visit the webpage: <a href="http://www.durhamwt.com/reserves/dwt-reserves-list/low-barns/">'+
+      'Low Barns</a>'
+;
+
+
+    osMap.createMarker(pos2, null, content2);
+    
+
+
+
+
+   
+// Add boundary layer via function below
+    
+   boundaryLayer = createBoundaryLayer();
+    osMap.addLayer(boundaryLayer);
+
+// make sure the markers can be clicked and are not hidden by the boundary layer 
+
+markers = osMap.getMarkerLayer();
+//markers.setZIndex(boundaryLayer.getZIndex() + 1000000);
+boundaryLayer.setZIndex(markers.getZIndex() - 1);
+   
+
+
+
+  }
+
+
+function createBoundaryLayer(){
+      
+// Create symbolizer and style map for boundary layer      
+	
+	var symbolizer = OpenLayers.Util.applyDefaults({}, OpenLayers.Feature.Vector.style["default"]);
+      
+	var styleMap = new OpenLayers.StyleMap(symbolizer);
+      
+// Specify style of boundary
+      
+	var lookup = {
+      
+			"UTA": {
+				fillColor: "#666",
+				// strokeColor: "#fff",
+				// strokeWidth: 3
+                   }
+      
+                 };
+      
+	styleMap.addUniqueValueRules("default", "AREA_CODE", lookup);
+	
+// Define boundary layer  
+		
+	var boundaryLayer = new OpenSpace.Layer.Boundary("Boundaries", {
+      
+			strategies: [new OpenSpace.Strategy.BBOX()],
+			area_code: ["UTA"], // unitary
+			admin_unit_ids: [
+            "43607", // county durham
+          
+            ],      
+			styleMap: styleMap
+      
+		});
+      
+		return boundaryLayer;
+    
+  
+    }
+  
+
+</script>
+
+<script>
+$(window).width()
+</script>
+
+</body>
+</html>
